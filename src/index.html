@@ -7,7 +7,308 @@
         <title>MP1</title>
     </head>
     <body>
-        <h1>Hello World! Welcome to MP1!</h1>
-        <img src="assets/image.jpg">
+        <nav id="navbar">
+            <div class="logo">
+                <h2>.SPOTTED.</h2>
+            </div>
+            <div id="navLinks">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#pictures">Pictures</a>
+                <a href="#photo">Photo</a>
+                <a href="#video">Video</a>
+                <a href="#contact">Legends</a>
+                <a href="#footer">Footer</a>
+            </div>
+        </nav>
+
+        
+
+        <!-- Home Section -->
+        <section id="home">
+            <div class="hero-content">
+                <h1>.SPOTTED.</h1>
+                <p>Automotive photography from the streets</p>
+                <p id="photocredslol">(all pictures taken by me!)</p>
+                <a href="#pictures">Explore Shots</a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <!-- this is multi-column requirement -->
+            <h2>What We Spot</h2>
+            <p>From modern supercars to forgotten classics, .SPOTTED. captures the cars that turn an ordinary street into something worth remembering</p>
+            <div class="columns">
+
+                <div class="category">
+                    <h3>Ferraris</h3>
+                    <p>Italian design, unmistakable sound, and presence that stops traffic</p>
+                </div>
+
+                <div class="category">
+                    <h3>Lamborghinis</h3>
+                    <p>Sharp lines, loud colors, and even louder engines</p>
+                </div>
+
+                <div class="category">
+                    <h3>Classics</h3>
+                    <p>The forgotten-era icons that paved the way for today's supercars</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Pictures Section -->
+        <section id="pictures">
+            <!-- This will be carosel requirement -->
+            <h2>Featured Cars</h2>
+
+            <div class="carousel">
+                <div id="carouselButtonHolder">
+                    <button id="leftButton">Left</button>
+                    <button id="rightButton">Right</button>
+                </div>
+
+                <div class="carouselSlides">
+                    <div class="slide">
+                        <img src="assets/cobra.jpeg" alt="Cobra">
+                        <h3>Shelby Cobra</h3>
+                        <p>Chicago, IL</p>
+                    </div>
+
+                    <div class="slide">
+                        <img src="assets/isc.jpg" alt="Illini Solar Car">
+                        <h3>Calypso: Illini Solar Car</h3>
+                        <p>Urbana-Champaign, Illinois</p>
+                    </div>
+
+                    <div class="slide">
+                        <img src="assets/f40_zoom.jpeg" alt="F40">
+                        <h3>Ferrari F40</h3>
+                        <p>Seattle, Washington</p>
+                    </div>
+
+                    <div class="slide">
+                        <img src="assets/laferrari.jpg" alt="Ferrari LaFerrari">
+                        <h3>Ferrari LaFerrari</h3>
+                        <p>Seattle, Washington</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Background Photo Section -->
+        <section id="photo">
+
+        </section>
+
+        <!-- Video Section -->
+        <section id="video">
+            <h2>Any Car, Any Shape</h2>
+
+            <video controls>
+                <source src="assets/portfoliovideo1.mp4" type="video/mp4">
+            </video>
+
+            <p>Note: I couldn't find any free-to-use videos online so I just copied my video from my personal <a href="https://dpandaman.github.io/" target="blank">porfolio website</a> since I have Illini Solar Car in there</p>
+
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <!-- will cover modal requirement -->
+            <h2>Cars that have left a legacy</h2>
+            <div class="container">
+                
+
+                <div class="modalHolder">
+                    <!-- model card 1 -->
+                    <div class="modalCard">
+                        <img src="assets/enzo.jpeg" alt="Porsche 911">
+
+                        <h3>Ferrari Enzo</h3>
+
+                        <button class="modalButton" id="modalCard1">
+                            Read details
+                        </button>
+                    </div>
+
+                    <!-- model card 2 -->
+                    <div class="modalCard">
+                        <img src="assets/romeo.jpeg" alt="Porsche 911">
+
+                        <h3>Alfa Romeo 33</h3>
+
+                        <button class="modalButton" id="modalCard2">
+                            Read details
+                        </button>
+                    </div>
+
+                    <!-- model card 3 -->
+                    <div class="modalCard">
+                        <img src="assets/reveluto.jpeg" alt="Porsche 911">
+
+                        <h3>Lamborghini Reveluto</h3>
+
+                        <button class="modalButton" id="modalCard3">
+                            Read details
+                        </button>
+                    </div>                    
+                </div>
+
+                <!-- actual modals themselves -->
+
+                <!-- Ferrari Enzo Modal -->
+                <div class="modal" id="enzoModal">
+                    <div class="modalContent">
+
+                        <button class="closeModal" aria-label="Close modal">
+                            &times;
+                        </button>
+
+                        <img src="assets/enzo.jpeg" alt="Ferrari Enzo">
+
+                        <span class="modalKicker">2002–2004 - ITALY</span>
+
+                        <h2>Ferrari Enzo</h2>
+
+                        <h3>History</h3>
+
+                        <p>
+                            Named after Ferrari founder Enzo Ferrari, the Enzo was built
+                            as a road-going showcase of the company's Formula 1 technology.
+                            Its carbon-fiber body, aggressive aerodynamics, and naturally
+                            aspirated V12 made it one of Ferrari's defining supercars
+                            of the early 2000s.
+                        </p>
+
+                        <h3>Specifications</h3>
+
+                        <ul>
+                            <li><strong>Engine:</strong> 6.0L Naturally Aspirated V12</li>
+                            <li><strong>Horsepower:</strong> 651 hp</li>
+                            <li><strong>Torque:</strong> 485 lb-ft</li>
+                            <li><strong>Top Speed:</strong> 217 mph</li>
+                            <li><strong>0–60 mph:</strong> ~3.3 seconds</li>
+                            <li><strong>Transmission:</strong> 6-speed automated manual</li>
+                        </ul>
+
+                        <p class="modalQuote">
+                            A Ferrari built to bring the spirit of Formula 1 to the street.
+                        </p>
+                    </div>
+                </div>
+
+
+                <!--  Romeo 33 Stradalec:\Users\dpand\Downloads\IMG_8779.jpeg -->
+                <div class="modal" id="alfaModal">
+
+                    <div class="modalContent">
+
+                        <button class="closeModal" aria-label="Close modal">
+                            &times;
+                        </button>
+
+                        <img src="assets/romeo.jpeg" alt="Alfa Romeo 33 Stradale">
+
+                        <span class="modalKicker">1967–1969 • ITALY</span>
+
+                        <h2>Alfa Romeo 33 Stradale</h2>
+
+                        <h3>History</h3>
+
+                        <p>
+                            Derived from Alfa Romeo's Tipo 33 racing car, the 33 Stradale was
+                            created as an exceptionally rare road-going sports car. Designed by
+                            Franco Scaglione, its lightweight construction, mid-engine layout,
+                            and racing-derived V8 made it one of the most advanced and beautiful
+                            Italian performance cars of its era.
+                        </p>
+
+                        <h3>Specifications</h3>
+
+                        <ul>
+                            <li><strong>Engine:</strong> 2.0L Naturally Aspirated V8</li>
+                            <li><strong>Horsepower:</strong> 230 hp</li>
+                            <li><strong>Torque:</strong> 152 lb-ft</li>
+                            <li><strong>Top Speed:</strong> 162 mph</li>
+                            <li><strong>0–60 mph:</strong> ~5.5 seconds</li>
+                            <li><strong>Transmission:</strong> 6-speed manual</li>
+                            <li><strong>Drive:</strong> Rear-wheel drive</li>
+                        </ul>
+
+                        <p class="modalQuote">
+                            A rare fusion of racing technology, lightweight engineering,
+                            and unmistakable Italian design.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Revuelto -->
+                <div class="modal" id="revueltoModal">
+
+                    <div class="modalContent">
+
+                        <button class="closeModal" aria-label="Close modal">
+                            &times;
+                        </button>
+
+                        <img src="assets/reveluto.jpeg" alt="Lamborghini Revuelto">
+
+                        <span class="modalKicker">2023–PRESENT • ITALY</span>
+
+                        <h2>Lamborghini Revuelto</h2>
+
+                        <h3>History</h3>
+
+                        <p>
+                            The Lamborghini Revuelto is Lamborghini's flagship V12 plug-in hybrid
+                            supercar, introduced in 2023 as the successor to the Aventador. It
+                            combines a naturally aspirated V12 engine with three electric motors,
+                            delivering extraordinary performance while introducing hybrid
+                            technology to Lamborghini's V12 lineup.
+                        </p>
+
+                        <h3>Specifications</h3>
+
+                        <ul>
+                            <li><strong>Engine:</strong> 6.5L Naturally Aspirated V12 + 3 Electric Motors</li>
+                            <li><strong>Horsepower:</strong> 1,001 hp</li>
+                            <li><strong>Torque:</strong> 535 lb-ft</li>
+                            <li><strong>Top Speed:</strong> 217 mph</li>
+                            <li><strong>0–60 mph:</strong> ~2.5 seconds</li>
+                            <li><strong>Transmission:</strong> 8-speed dual-clutch automatic</li>
+                            <li><strong>Drive:</strong> All-wheel drive</li>
+                        </ul>
+
+                        <p class="modalQuote">
+                            A new-generation V12 icon combining Lamborghini's legendary
+                            naturally aspirated engine with cutting-edge hybrid performance.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+        <!-- Footer Section -->
+         <!-- (also inspired from my personal portfolio website, linked in MP0) -->
+        <section id="footer">
+            <p> Devanshu | Contact .SPOTTED. below or <a href="mailto:dhp4@illinois.edu"> email us</a> today!</p>
+
+            <div class="socialButtons">
+                <a href="https://github.com/uiucdhp4/mp1"><img src="assets/github.png" id="github"></a>
+                <a href="https://www.instagram.com/?hl=en"><img src="assets/instagram1.png" id="github"></a>
+            </div>
+        </section>
     </body>
 </html>

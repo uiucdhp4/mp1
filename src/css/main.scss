@@ -1,1 +1,794 @@
 /* Your SCSS here. */
+
+/* originally had just :root for variables but had to change since we are using scss and need the speical things for points */
+$font-family: Arial, sans-serif;
+
+$background-color: #ffffff;
+$text-color: #172033;
+$text-color-light: #e6e8ed;
+$muted-text-color: #667085;
+$darker-color: #1e2126;
+$hero-color: #0f172a;
+
+$accent-color: #2e2ee3;
+$accent-hover-color: #1d4ed8;
+
+$border-color: #e2e8f0;
+
+$section-padding: 80px;
+$container-width: 1100px;
+
+$border-radius: 12px;
+$small-radius: 8px;
+
+/* for centering so we dont repeat */
+@mixin centered-container {
+    width: 100%;
+    max-width: $container-width;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: $background-color;
+    color: $text-color;
+    font-family: $font-family;
+    line-height: 1.6;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+
+    padding: 1rem 5%;
+
+    background-color: $background-color;
+    border-bottom: 1px solid $border-color;
+
+    transition:
+        padding 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+nav.scrolled {
+    padding: 0.5rem 24px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+nav .on_it {
+    color: $accent-color;
+    text-decoration: underline;
+}
+
+nav .off_it {
+    color: $muted-text-color;
+}
+
+.navLinks {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+}
+
+#navLinks a {
+    position: relative;
+    color: $text-color;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: font-size 0.3s ease;
+    transition:
+        color 0.2s ease,
+        font-size 0.3s ease;
+}
+
+nav a {
+    margin-left: 1.5rem;
+
+    color: $text-color;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition:
+        color 0.2s ease,
+        font-size 0.3s ease;
+}
+
+nav a:hover {
+    color: $accent-color;   
+}
+
+nav.scrolled #navLinks a {
+    font-size: 0.9rem;
+}
+
+@media (max-width: 900px) {
+    nav {
+        padding: 0.75rem 24px;
+    }
+
+    nav h2 {
+        font-size: 1.1rem;
+    }
+
+    #navLinks {
+        gap: 0.8rem;
+    }
+
+    #navLinks a {
+        margin-left: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    nav.scrolled #navLinks a {
+        font-size: 0.8rem;
+    }
+}
+
+#navLinks a:hover {
+    color: $accent-color;
+}
+
+#navLinks a.on_it {
+    color: $accent-color;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+#navLinks a.off_it {
+    color: $muted-text-color;
+}
+
+/* Hero Stuff */
+#home {
+    text-align: center;
+    background-color: $hero-color;
+}
+
+@keyframes heroFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-content {
+    max-width: 800px;
+    color: $text-color-light;
+    animation: heroFadeIn 1s ease-out;
+}
+
+.hero-content h1 {
+    margin: 0;
+    font-size: clamp(3rem, 8vw, 7rem);
+    color: $text-color-light;
+    letter-spacing: 0.1em;
+}
+
+.hero-content p {
+    margin: 1rem 0 2rem;
+    color: $muted-text-color;
+    font-size: 1.2rem;
+}
+
+.hero-content a {
+    display: inline-block;
+
+    padding: 0.8rem 1.5rem;
+
+    background-color: $accent-color;
+    border-radius: $small-radius;
+    color: $background-color;
+
+    text-decoration: none;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.hero-content a:hover {
+    background-color: $accent-hover-color;
+    transform: translateY(-2px);
+}
+
+#photocredslol {
+    font-size: x-small;
+}
+
+section {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 6rem 0;
+}
+
+.container {
+    @include centered-container;
+}
+
+/* background photo */
+#photo {
+    background-image: url("../assets/background.jpeg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+/* ABOUT SECTION */
+
+#about {
+    min-height: auto;
+    padding: $section-padding 24px;
+    text-align: center;
+}
+
+#about h2 {
+    margin-bottom: 1rem;
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+#about p {
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    color: $muted-text-color;
+}
+
+.columns {
+    width: 100%;
+    max-width: $container-width;
+
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+
+    gap: 2rem;
+}
+
+.category {
+    flex: 1;
+    padding: 2rem;
+    border: 1px solid $border-color;
+    background-color: $background-color;
+    text-align: center;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.category:hover {
+    transform: translateY(-4px);
+    border-color: $accent-color;
+
+}
+
+.category h3 {
+    margin-bottom: 0.75rem;
+
+    font-size: 1.4rem;
+}
+
+.category p {
+    margin: 0;
+
+    color: $muted-text-color;
+}
+
+
+
+
+
+/* CAROUSEL */
+
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: $container-width;
+    margin: 2rem auto 0;
+    overflow: hidden;
+    border-radius: $border-radius;
+}
+
+.carouselSlides {
+    display: flex;
+    transition: transform 0.4s ease;
+}
+
+.slide {
+    min-width: 100%;
+    background-color: $background-color;
+    text-align: center;
+}
+
+.slide img {
+    display: block;
+    width: 100%;
+    height: 550px;
+    object-fit: cover;
+}
+
+.slide h3 {
+    margin: 1rem 0 0.25rem;
+    font-size: 1.4rem;
+    color: $darker-color;
+}
+
+.slide p {
+    margin: 0 0 1.5rem;
+    color: $muted-text-color;
+    font-size: 0.95rem;
+}
+
+
+/* Carousel arrows */
+
+#carouselButtonHolder {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 1rem;
+
+    pointer-events: none;
+}
+
+#carouselButtonHolder button {
+    width: 42px;
+    height: 42px;
+    background-size: 20px 20px;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: $background-color;
+    color: white;
+
+    font-size: 0;
+    cursor: pointer;
+
+    pointer-events: auto;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+#carouselButtonHolder button:hover {
+    background-color: rgba(0, 0, 0, 0.85);
+    transform: scale(1.05);
+}
+
+#leftButton {
+    background-image: url("../assets/left_arrow.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    font-size: 1.2rem;
+}
+
+#rightButton {
+    background-image: url("../assets/right_arrow.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    font-size: 1.2rem;
+}
+
+
+/* Smaller screens */
+
+@media (max-width: 700px) {
+
+    .slide img {
+        height: 300px;
+    }
+
+    #carouselButtonHolder {
+        padding: 0 0.75rem;
+    }
+
+    #carouselButtonHolder button {
+        width: 38px;
+        height: 38px;
+    }
+}
+
+
+/* Video */
+#video {
+    text-align: center;
+}
+
+#video h2 {
+    margin-bottom: 2rem;
+}
+
+#video video {
+    display: block;
+
+    width: 100%;
+    max-width: 50vw;
+
+    border-radius: $border-radius;
+    background-color: #000;
+}
+
+#video p {
+    color: $muted-text-color;
+    font-size: x-small;
+}
+
+
+
+//* LEGENDS / MODAL CARDS */
+/* Cards that open the modals */
+.modalHolder {
+    width: 100%;
+    max-width: $container-width;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 2rem;
+
+    margin: 2rem auto 0;
+}
+
+.modalCard {
+    overflow: hidden;
+
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+
+    background-color: $background-color;
+
+    text-align: center;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.modalCard:hover {
+    transform: translateY(-5px);
+
+    border-color: $accent-color;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.modalCard img {
+    display: block;
+
+    width: 100%;
+    height: 220px;
+
+    object-fit: cover;
+}
+
+.modalCard h3 {
+    margin: 1.25rem 1rem 1rem;
+
+    font-size: 1.3rem;
+}
+
+.modalButton {
+    margin-bottom: 1.5rem;
+
+    padding: 0.7rem 1.2rem;
+
+    border: none;
+    border-radius: $small-radius;
+
+    background-color: $accent-color;
+    color: white;
+
+    font-family: inherit;
+    font-size: 0.95rem;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.modalButton:hover {
+    background-color: $accent-hover-color;
+
+    transform: translateY(-2px);
+}
+
+.modalButton:focus-visible,
+.closeModal:focus-visible {
+    outline: 3px solid rgba(37, 99, 235, 0.35);
+    outline-offset: 3px;
+}
+
+
+.modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    z-index: 500;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modalContent {
+    position: relative;
+
+    width: 100%;
+    max-width: 700px;
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    padding: 2rem;
+
+    border-radius: $border-radius;
+
+    background-color: $background-color;
+    color: $text-color;
+
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3);
+
+    transform: translateY(15px) scale(0.98);
+
+    transition: transform 0.25s ease;
+}
+
+.modal.active .modalContent {
+    transform: translateY(0) scale(1);
+}
+
+.modalContent img {
+    display: block;
+
+    width: 100%;
+    height: 300px;
+
+    margin-bottom: 1.5rem;
+
+    border-radius: $small-radius;
+
+    object-fit: cover;
+}
+
+.closeModal {
+    position: absolute;
+
+    top: 1rem;
+    right: 1rem;
+
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    padding: 0;
+
+    border: none;
+
+    background-color: $darker-color;
+    color: $background-color;
+
+    font-family: inherit;
+    font-size: 1.5rem;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.closeModal:hover {
+    background-color: #000000;
+
+    transform: scale(1.05);
+}
+
+.modalKicker {
+    display: block;
+
+    margin-bottom: 0.5rem;
+
+    color: $accent-color;
+
+    font-size: 0.85rem;
+    font-weight: bold;
+
+    letter-spacing: 0.08em;
+}
+
+.modalContent h2 {
+    margin: 0 0 1rem;
+
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+.modalContent h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.modalContent p {
+    color: $muted-text-color;
+}
+
+.modalContent ul {
+    padding-left: 1.5rem;
+}
+
+.modalContent li {
+    margin-bottom: 0.4rem;
+}
+
+.modalQuote {
+    margin-top: 2rem;
+    padding-top: 1rem;
+
+    border-top: 1px solid $border-color;
+
+    color: $muted-text-color;
+
+    font-style: italic;
+}
+
+@media (max-width: 800px) {
+
+    .modalHolder {
+        grid-template-columns: 1fr;
+    }
+
+    .modal {
+        padding: 1rem;
+    }
+
+    .modalContent {
+        max-height: 92vh;
+
+        padding: 1.5rem;
+    }
+
+    .modalContent img {
+        height: 240px;
+    }
+
+    .columns {
+        flex-direction: column;
+        max-width: 600px;
+    }
+
+    .category {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .modal {
+        padding: 0.75rem;
+    }
+
+    .modalContent {
+        max-height: 94vh;
+
+        padding: 1.25rem;
+
+        border-radius: $small-radius;
+    }
+
+    .modalContent img {
+        height: 200px;
+    }
+
+    .closeModal {
+        top: 0.75rem;
+        right: 0.75rem;
+
+        width: 36px;
+        height: 36px;
+    }
+}
+
+
+
+/* Footer Syling */
+
+#footer {
+    min-height: auto;
+    padding: 2rem 24px;
+    background-color: $darker-color;
+    text-align: center;
+}
+
+#footer p {
+    font-size: 0.9rem;
+    color: $text-color-light;
+}
+
+#footer a {
+
+    color: $accent-color;
+}
+
+#github {
+    width: 100px;
+}
+
+.socialButtons {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    width: 80vw;
+}
+
+
+.socialButtons img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.socialButtons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: bold;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
